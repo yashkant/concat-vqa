@@ -1,4 +1,23 @@
-# Contrast and Classify: Alternate Training for Robust VQA
+Contrast and Classify: Alternate Training for Robust VQA
+===================================================
+<h4>
+Yash Kant, Abhinav Moudgil, Dhruv Batra, Devi Parikh, Harsh Agrawal
+</br>
+<span style="font-size: 14pt; color: #555555">
+Pre-print, Under Review
+</span>
+</h4>
+<hr>
+
+**Paper:** [https://arxiv.org/abs/2010.06087](https://arxiv.org/abs/2010.06087)
+
+**Project Page:** [yashkant.github.io/projects/concat-vqa](https://yashkant.github.io/projects/concat-vqa.html)
+
+<p align="center">
+  <img src="tools/concat-vqa-large.png">
+</p>
+
+We propose a novel training paradigm (ConCAT) that alternately optimizes cross-entropy and contrastive losses. The contrastive loss encourages representations to be robust to linguistic variations in questions while the cross-entropy loss preserves the discriminative power of the representations for answer classification. VQA models trained with ConCAT achieve higher consensus scores on the VQA-Rephrasings dataset as well as higher VQA accuracy on the VQA 2.0 dataset compared to existing approaches across a variety of data augmentation strategies.
 
 ## Repository Setup
 
