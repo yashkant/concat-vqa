@@ -81,3 +81,18 @@ Baseline (trainval)  | - | 69.51 | 69.22 |
 ConCAT (trainval)  | - | **69.80** | **70.00** |
 
 These files are placed under `results/<experiment-name>`. 
+
+
+## Acknowledgements
+Parts of this codebase were borrowed from the following repositories:
+- [12-in-1: Multi-Task Vision and Language Representation Learning](https://github.com/facebookresearch/vilbert-multi-task): Training Setup
+- [Supervised Contrastive Learning](https://github.com/HobbitLong/SupContrast): Loss Function
+
+We thank  <a href="https://abhishekdas.com/">Abhishek Das</a>,  <a href="https://arjunmajum.github.io/">Arjun Majumdar
+</a> and  <a href="https://prithv1.xyz//">Prithvijit Chattopadhyay</a> for their feedback. The Georgia Tech effort was supported in part by NSF, AFRL, DARPA, ONR YIPs, ARO PECASE, Amazon. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of the U.S. Government, or any sponsor.
+
+
+
+## License
+MIT
+
