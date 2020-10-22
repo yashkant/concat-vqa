@@ -1,0 +1,9 @@
+# Cache and Visual Studio files
+__pycache__/
+.vscode
+
+# Data paths
+data-release/
+datasets/
+data/
+save/

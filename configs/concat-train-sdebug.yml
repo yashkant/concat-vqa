@@ -1,0 +1,88 @@
+# configuration for the Multi-Modal Transformer
+MMT:
+  obj_drop: 0.1
+  ocr_drop: 0.1
+  hidden_size: 768
+  num_hidden_layers: 6
+  num_spatial_relations: 12
+  obj_feature_size: 2048
+  finetune_ocr_obj: false
+  normalize: true
+  lr_scale_mmt: 1.0
+  max_obj_num: 101
+  max_seq_length: 23
+  fusion_method: "mul"
+  beam_size: 1
+  weight_decay: 0.00001
+  contrast_out_dim: 128
+  contrastive: better
+  freeze_textbert_and_mmt: false
+
+
+# configuration for the TextBERT
+TextBERT:
+  lr_scale_text_bert: 0.1
+  num_hidden_layers: 3
+  text_bert_init_from_bert_base: true
+  vocab_size: 30522
+
+
+# experiment configuration
+trainval_features_path: data-release/image-features/COCO_trainval_resnext152_faster_rcnn_genome.lmdb  # image-features
+test_features_path: data-release/image-features/COCO_test_resnext152_faster_rcnn_genome.lmdb  # image-features
+
+
+# training and evaluation data
+# revqa: human rephrasings set ,revqa-bt: back-translated rephrasings set
+val_split: [minval, revqa, revqa_bt, val, test]
+train_split: train_aug
+aug_filter:  # rephrasings filter
+  num_rephrasings: 4
+  sim_threshold: 0.95
+
+
+# training details
+num_epoch: 5
+grad_clip_mode: all
+max_grad_norm: 0.25
+max_seq_length: 23 # max. question tokens
+max_region_num: 101 # max. image tokens
+optim: Adam
+lr_scheduler: pythia_warmup_decay
+warmup_iters: 4266
+lr: 0.0002
+warmup_factor: 0.1
+lr_decay_iters: [10665, 14931]
+lr_decay: 0.2
+alt_train: true  # sets alternate training
+ce_freq: 4  # use 1 scl and 3 ce iterations
+seed: 0
+batch_size: 210
+monitor_value: cs_score
+workers: 16
+revqa_eval: true
+two_norm: false
+freeze_textbert_and_mmt: false
+hard_stop: 25000
+eval_iter_factor: 1500
+
+
+# contrastive sampling
+num_positives: 1 # num of positives per sample
+bin_ans_threshold: 4
+freq_ans_threshold: 4
+init_batch_size: 10
+neg_type_weights: [0.25, 0.25, 0.5]
+neg_question_thresh: 210
+contrastive: better
+
+
+# scaled contrastive loss
+scl_mask_rescale_factor: 20
+base_temperature: 0.07
+temperature: 0.5
+loss: SCLLoss
+scl_formulation: "normal"
+debug: false
+sdebug: false
+
