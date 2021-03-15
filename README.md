@@ -1,11 +1,6 @@
 Contrast and Classify: Training for Robust VQA Models
 ===================================================
 
-<p align="center">
-  <img src="tools/concat-vqa-large.png">
-</p>
-
-
 ## Repository Setup
 
 Create a fresh conda environment and install all dependencies.
