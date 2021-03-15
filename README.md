@@ -1,23 +1,10 @@
-Contrast and Classify: Alternate Training for Robust VQA
+Contrast and Classify: Training for Robust VQA Models
 ===================================================
-<h4>
-Yash Kant, Abhinav Moudgil, Dhruv Batra, Devi Parikh, Harsh Agrawal
-</br>
-<span style="font-size: 14pt; color: #555555">
-Pre-print, Under Review
-</span>
-</h4>
-<hr>
-
-**Paper:** [https://arxiv.org/abs/2010.06087](https://arxiv.org/abs/2010.06087)
-
-**Project Page:** [yashkant.github.io/projects/concat-vqa](https://yashkant.github.io/projects/concat-vqa.html)
 
 <p align="center">
   <img src="tools/concat-vqa-large.png">
 </p>
 
-We propose a novel training paradigm (ConCAT) that alternately optimizes cross-entropy and contrastive losses. The contrastive loss encourages representations to be robust to linguistic variations in questions while the cross-entropy loss preserves the discriminative power of the representations for answer classification. VQA models trained with ConCAT achieve higher consensus scores on the VQA-Rephrasings dataset as well as higher VQA accuracy on the VQA 2.0 dataset compared to existing approaches across a variety of data augmentation strategies.
 
 ## Repository Setup
 
@@ -39,7 +26,7 @@ conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
 Check `README.md` under `data-release` for more details.  
 
 ## Training
-We provide commands to run both the baseline and ConCAT experiments.
+We provide commands to run both the baseline and ConClaT experiments.
 
 #### Baseline
 
@@ -56,14 +43,14 @@ python train.py \
 --tag baseline-trainval \      # output folder
 ```
 
-#### ConCAT
-To train with ConCAT alternate training on train set use:
+#### ConClaT
+To train with ConClaT alternate training on train set use:
 ```
 python train.py \
 --task_file configs/concat-train.yml  \
 --tag concat-train \      # output folder
 ```
-To train with ConCAT alternate training on train+val set use:
+To train with ConClaT alternate training on train+val set use:
 ```
 python train.py \
 --task_file configs/concat-trainval.yml  \
@@ -76,23 +63,8 @@ We share result files from above runs which could be submitted to the EvalAI cha
   Method  |  val   |  test-dev   |  test-std  |
  ------- | ------ | ------ | ------ |
 Baseline (train)  | 66.31 | - | - |
-ConCAT (train)  | **66.98** | - | - |
+ConClaT (train)  | **66.98** | - | - |
 Baseline (trainval)  | - | 69.51 | 69.22 |
-ConCAT (trainval)  | - | **69.80** | **70.00** |
+ConClaT (trainval)  | - | **69.80** | **70.00** |
 
 These files are placed under `results/<experiment-name>`. 
-
-
-## Acknowledgements
-Parts of this codebase were borrowed from the following repositories:
-- [12-in-1: Multi-Task Vision and Language Representation Learning](https://github.com/facebookresearch/vilbert-multi-task): Training Setup
-- [Supervised Contrastive Learning](https://github.com/HobbitLong/SupContrast): Loss Function
-
-We thank  <a href="https://abhishekdas.com/">Abhishek Das</a>,  <a href="https://arjunmajum.github.io/">Arjun Majumdar
-</a> and  <a href="https://prithv1.xyz//">Prithvijit Chattopadhyay</a> for their feedback. The Georgia Tech effort was supported in part by NSF, AFRL, DARPA, ONR YIPs, ARO PECASE, Amazon. The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of the U.S. Government, or any sponsor.
-
-
-
-## License
-MIT
-
