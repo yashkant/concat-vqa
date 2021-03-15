@@ -1,4 +1,4 @@
-Contrast and Classify: Training for Robust VQA Models
+Contrast and Classify: Training Robust VQA Models
 ===================================================
 
 ## Repository Setup
