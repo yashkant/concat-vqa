@@ -1,6 +1,6 @@
 # Data Setup
 We use a publicly available detection model `vqa-maskrcnn-benchmark` to extract image features. 
-But you don't need to do that!? Just use this [dropbox link](https://www.dropbox.com/sh/v826l3ge7oz4vz4/AACRimDdy_BGnN2XZJDZLyY6a?dl=0) to download everything (features, splits, negatives). 
+But you don't need to do that!? Just use this [dropbox link](https://www.dropbox.com/sh/fjf9mk2zgyax274/AABk5h9uB3YoUwGtBzW1u4eZa?dl=0) to download everything (features, splits, negatives). 
 If you insist on extracting features see Extracting features.
 
 
