@@ -4,7 +4,7 @@ Contrast and Classify: Training Robust VQA Models
 Yash Kant, Abhinav Moudgil, Dhruv Batra, Devi Parikh, Harsh Agrawal
 </br>
 <span style="font-size: 14pt; color: #555555">
-Pre-print, Under Review
+Published at ICCV, 2021
 </span>
 </h4>
 <hr>
